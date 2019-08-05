@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainapp',
     'rest_framework',
+    'django_celery_beat',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -122,22 +124,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'Paris_Kamal'
-EMAIL_HOST_PASSWORD = 'xxxxxxxxxxxx'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True    
-
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'Paris_Kamal'
+# EMAIL_HOST_PASSWORD = 'xxxxxxxx'
 # EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'pariskamal8@gmail.com'
-# EMAIL_HOST_PASSWORD = 'xxxxxxxxxxx'
+# EMAIL_USE_TLS = True    
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'paris.kamal@marketcalls.in'
+EMAIL_HOST_PASSWORD = 'xxxxxxx'
 
 
 # CELERY STUFF
 BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'

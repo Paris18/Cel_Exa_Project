@@ -22,5 +22,5 @@ class UserViewSet(GenericViewSet):
 
 	@action(methods=['post'], detail=False)
 	def register(self, request):
-		runtask(request.data)
+		runtask.delay(request.data)
 		return Response({}, status.HTTP_200_OK)
