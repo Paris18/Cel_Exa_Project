@@ -24,7 +24,7 @@ from datetime import datetime
 class UserViewSet(GenericViewSet):
 
 	@action(methods=['post'], detail=False)
-	def register(self, request):
+	def gethtmls(self, request):
 		runtask.delay(request.data)
 		print (datetime.now())
 		return Response({"status":"mail has be sent u will receive shortly"}, status.HTTP_200_OK)
