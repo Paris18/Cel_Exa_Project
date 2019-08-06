@@ -13,9 +13,9 @@ logger = logging.getLogger(__name__)
 
 def sendmail(message,subject,tolist):
 	try:
-		# msg = EmailMessage(subject, message, EMAIL_HOST_USER, tolist) 
-		# msg.attach_file('folder.zip')
-		# msg.send()
+		msg = EmailMessage(subject, message, EMAIL_HOST_USER, tolist) 
+		msg.attach_file('folder.zip')
+		msg.send()
 		logger.info("Mail Sent ")
 		return 1
 	except:

@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'he191k)r(dyuf@8okhn^2i&g*7%b&2w^f#6b*9jost74zh(g()'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -133,8 +133,8 @@ STATIC_URL = '/static/'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'paris.kamal@marketcalls.in'
-EMAIL_HOST_PASSWORD = 'xxxxxxx'
+EMAIL_HOST_USER = 'pariskamal8@gmail.com'
+EMAIL_HOST_PASSWORD = 'shri1008'
 
 
 # CELERY STUFF

@@ -16,6 +16,9 @@ from rest_framework.viewsets import GenericViewSet
 from libs.htmldowlnoader import runtask
 
 
+from datetime import datetime
+
+
 
 
 class UserViewSet(GenericViewSet):
@@ -23,4 +26,5 @@ class UserViewSet(GenericViewSet):
 	@action(methods=['post'], detail=False)
 	def register(self, request):
 		runtask.delay(request.data)
+		print (datetime.now())
 		return Response({}, status.HTTP_200_OK)
