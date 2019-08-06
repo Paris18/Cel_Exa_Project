@@ -3,11 +3,8 @@ import logging
 import urllib.request,shutil,os
 from celery import shared_task
 
-
-
 # Project level import
 from .mail import sendmail
-
 
 
 urlstr = ["https://","www.",".com",".co","in","/","."]
@@ -35,7 +32,7 @@ def runtask(data):
 		for i in data["urls"]:
 			dowloadhtml(i)
 		shutil.make_archive('folder', 'zip', 'folder')
-		sendmail('message',"subject",[data["email"]])
+		sendmail('PFA for zipped file of html',"html downloader",[data["email"]])
 		shutil.rmtree('folder')
 		os.remove('folder.zip')
 	except:

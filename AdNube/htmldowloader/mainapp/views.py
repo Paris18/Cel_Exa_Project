@@ -27,4 +27,4 @@ class UserViewSet(GenericViewSet):
 	def register(self, request):
 		runtask.delay(request.data)
 		print (datetime.now())
-		return Response({}, status.HTTP_200_OK)
+		return Response({"status":"mail has be sent u will receive shortly"}, status.HTTP_200_OK)
